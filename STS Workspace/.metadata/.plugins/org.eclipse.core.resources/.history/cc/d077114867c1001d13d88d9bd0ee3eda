@@ -1,0 +1,5 @@
+package com.ns.config;
+
+public class KafkaTopicConfig {
+
+}

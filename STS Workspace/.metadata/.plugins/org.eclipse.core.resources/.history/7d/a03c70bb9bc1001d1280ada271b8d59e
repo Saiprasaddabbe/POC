@@ -1,0 +1,5 @@
+package com.neosoft.repositories;
+
+public interface ProductRepository {
+
+}

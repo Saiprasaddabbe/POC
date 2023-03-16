@@ -1,0 +1,9 @@
+package com.neosoft.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.neosoft.models.Cart;
+
+public interface CartRepository {//extends JpaRepository<Cart, Integer>{
+
+}

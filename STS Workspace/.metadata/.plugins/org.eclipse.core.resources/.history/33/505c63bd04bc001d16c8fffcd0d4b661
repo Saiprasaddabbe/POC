@@ -1,0 +1,66 @@
+package com.neosoft;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+import java.time.ZoneId;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Main implements BiFunction<List<Integer>, List<Integer>, List<Integer>>{
+
+	public static void main(String[] args) {
+
+//		LocalDate ld = LocalDate.now();
+//		LocalDate ld = LocalDate.of(1999, 13, 04);
+//		LocalDate ld2 = LocalDate.of(1989, Month.FEBRUARY, 29);
+//		LocalTime lt = LocalTime.now();
+//		LocalTime lt = LocalTime.of(10, 9, 23);
+
+//		for(String s : ZoneId.getAvailableZoneIds()) {
+//			System.out.println(s);
+//		};
+//		System.out.println(lt);
+
+		// supplier //consumer //predicate // function
+
+//		Supplier s = () ->  10;
+//		
+//		System.out.println(s.get());
+//		
+//		Consumer c = a->System.out.println(a+ "Hii");
+//		
+//		c.accept(10);
+//		
+//		Predicate<Integer> p = num->num%2==0;
+//		boolean ans = p.test(0);
+//		System.out.println(ans);
+//		
+//		Function<Integer, Integer> f = i->i*2;
+//		Integer a  = f.apply(8);
+//		
+//		System.out.println(a);
+//		
+		List<Integer> list1 = Stream.of(1,2,3,4,5,6,7,8,9).collect(Collectors.toList());
+		List<Integer> list1 = Stream.of(1,2,3,4,5,6,7,8,9,22,44,55,66,45,33).collect(Collectors.toList());
+		
+	
+
+
+	}
+
+	@Override
+	public List<Integer> apply(List<Integer> list1, List<Integer> list2) {
+		// TODO Auto-generated method stub
+		return Stream.of(list1,list2)
+				      .flatMap(List::stream)
+				      .distinct()
+				      .collect(Collectors.toList());
+	}
+}

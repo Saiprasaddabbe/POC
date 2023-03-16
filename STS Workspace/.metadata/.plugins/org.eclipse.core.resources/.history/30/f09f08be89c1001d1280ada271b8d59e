@@ -1,0 +1,26 @@
+package com.neosoft.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.neosoft.models.Product;
+import com.neosoft.repositories.ProductRepository;
+
+public class ProductServiceImpl implements ProductService{
+
+	@Autowired
+	private ProductRepository pRepo;
+	
+	
+	@Override
+	public List<Product> getAllProducts() {
+		
+		return pRepo.findAll();
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,33 @@
+package com.neosoft;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		List<Integer> num = new ArrayList<>();
+		
+		num.add(1);
+		num.add(2);
+		num.add(23);
+		num.add(10);
+		
+		Iterator<Integer> i = num.iterator();
+		
+		while(i.hasNext()) {
+			
+			System.out.println(i.next());
+			if(i.next()==2) {
+				
+				
+				num.remove(i.next());
+			}
+		}
+		System.out.println(num);
+		
+	}
+
+}

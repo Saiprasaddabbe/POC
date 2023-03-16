@@ -1,0 +1,34 @@
+package com.neosoft;
+
+interface Test{
+	public void demo();
+	
+}
+
+public class Main {
+	
+	public static void fun1() {
+		System.out.println("inside fun1");
+	}
+	public static void fun2() {
+		System.out.println("inside fun2");
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Test t1 = ()->System.out.println("inside fun1");
+		t1.demo();
+		
+		Test t2 = Main::fun1;
+		t2.demo();
+		t2=Main::fun2;
+		t2.demo();
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.neosoft.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.neosoft.models.User;
+import com.neosoft.repositories.UserRepository;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepository uRepo;
+	
+	@Override
+	public List<User> getAllProducts() {
+		return uRepo.findAll() ;
+	}
+
+	@Override
+	public User addNewProduct(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

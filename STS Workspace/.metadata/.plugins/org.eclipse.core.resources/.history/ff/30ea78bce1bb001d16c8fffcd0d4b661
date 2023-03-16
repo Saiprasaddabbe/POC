@@ -1,0 +1,14 @@
+package com.neosoft;
+
+import java.time.LocalDate;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+//		LocalDate ld = LocalDate.now();
+		LocalDate ld = LocalDate.of(1999, 11, 04);
+		System.out.println(ld);
+
+	}
+}

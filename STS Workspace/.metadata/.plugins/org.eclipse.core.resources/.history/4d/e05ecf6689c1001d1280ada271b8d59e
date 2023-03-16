@@ -1,0 +1,31 @@
+package com.neosoft.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.neosoft.models.Product;
+import com.neosoft.services.ProductService;
+
+@RestController
+public class ProductController {
+
+	@Autowired
+	private ProductService pService;
+	
+	
+	@GetMapping("getallproducts")
+	public ResponseEntity<List<Product>> getAllProductHandler(){
+		
+		List<Product> products =  pService.getAllProducts();
+		
+		return products;
+	}
+	
+	
+	
+	
+}

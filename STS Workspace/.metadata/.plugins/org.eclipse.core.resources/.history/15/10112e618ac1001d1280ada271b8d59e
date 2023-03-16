@@ -1,0 +1,18 @@
+package com.neosoft.services;
+
+import java.util.List;
+
+import com.neosoft.models.Product;
+import com.neosoft.models.User;
+
+public interface UserService {
+
+public List<User> getAllProducts();
+	
+	public User addNewProduct(User user);
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,23 @@
+package com.neosoft;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class Main2 {
+	
+	public static void fun1() {
+		System.out.println("Inside fun1 of Main2");
+	}
+
+	public static void main(String[] args) {
+
+		Main2.fun1();
+		Main2 m2 =  new Main2();
+		
+		m2::fun1;
+	
+	
+	}
+
+}
