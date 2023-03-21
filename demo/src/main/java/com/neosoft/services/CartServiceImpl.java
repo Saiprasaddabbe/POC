@@ -37,29 +37,37 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public CartDto addToCart(RequestDto requestDto) throws CartException, UserException, ProductException {
-		//check for valid user
-		User user = uRepo.findById(requestDto.getUserId())
-				.orElseThrow(() -> new UserException("User not found with this user id: " + requestDto.getUserId()));
-        
-		//get all product from requests
-		List<Product> requestProductList = requestDto.getProductList().stream()
-		.for(p->{
-			Product product = new Product();
-			product.setProductId(p.getProductId());
-			product.setProductName(p.getProductName());
-			product.setPrice(p.getPrice());
-			product.setQty(p.getQty());
-			return product;
-		}).collect(Collectors.toList());
+		
+	    List<ProductDto> reqProductDtos =  requestDto.getProductList();
+	    List<Product> reqProducts = reqProductDtos.stream().map(p->{
+	    	Product product = new Product();
+	    	product.setProductId(p.getProductId());
+	    	product.setProductName(p.getProductName());
+	    	product.setPrice(p.getPrice());
+	    	product.setQty(p.getQty());
+	    	return product;
+	    }).toList();
+	    User reqUser = uRepo.findById(requestDto.getUserId()).get();
+	    
+	    Cart cart =  cRepo.findByUser(reqUser);
+	    cart.getProducts().addAll(reqProducts);
+	    
+	    
 		
 		
 		
 		
 		
-		
-		
-		
+		return null;
 	}
+
+
+		
+		
+		
+		
+		
+	
 }
 
 /*
