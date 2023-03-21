@@ -1,27 +1,36 @@
-package com.neosoft;
+package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.neosoft.service.Producer;
+import com.example.demo.service.Producer;
 
 @RestController
-@RequestMapping("/rest/api")
+@RequestMapping("/rest/api/")
 public class RestControllerForKafkaMsg {
 
-	
 	@Autowired
-	private Producer producer;
+	Producer producer;
+	
 	
 	@GetMapping("/producerMsg")
-	public void getMessageFormClient(@RequestParam("message") String message) {
+	public void getMessageFromClient(@RequestParam("message") String message) {
 		
-		producer.sendMsgToTopic(message);
+		
+		producer.sendMsgtoTopic(message);
 		
 		
 	}
+	@GetMapping("/producerMsg1")
+	public void getMessageFromClient1(@RequestParam("message") String message) {
+		
+		
+		producer.sendMsgtoTopic(message);
+		
+		
+	}
+	
 }
